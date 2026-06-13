@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 .venv/
 __pycache__/
+=======
+.venv/
+__pycache__/
+>>>>>>> 7394000c417f9f07953a092ad4bea71e422f4c1f
 similarity.pkl
