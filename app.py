@@ -5,14 +5,15 @@ import gdown
 import os
 
 # ── Download similarity.pkl from Google Drive if not present ──────────────────
+
 @st.cache_resource
 def load_data():
     if not os.path.exists('similarity.pkl'):
         with st.spinner('Downloading similarity matrix (one-time setup)...'):
+            file_id = '10eWAhUqTilcsgUiFAHDUwEyI9-M1o58R'
             gdown.download(
-                'https://drive.google.com/file/d/10eWAhUqTilcsgUiFAHDUwEyI9-M1o58R/view?usp=drive_link',
-                'similarity.pkl',
-                fuzzy=True,   # handles the /view?usp=... URL format
+                id=file_id,
+                output='similarity.pkl',
                 quiet=False
             )
     movies = pickle.load(open('movies.pkl', 'rb'))
